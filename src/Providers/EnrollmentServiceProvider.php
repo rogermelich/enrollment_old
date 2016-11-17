@@ -3,7 +3,7 @@
 namespace Scool\Enrollment\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Scool\Enrollment\ScoolEnrollment;
+// use Scool\Enrollment\ScoolEnrollment;
 
 /**
  * Class EnrollmentServiceProvider
@@ -16,9 +16,9 @@ class EnrollmentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (!defined('SCOOL_ENROLLMENT_PATH')) {
-            define('SCOOL_ENROLLMENT_PATH', realpath(__DIR__.'/../../'));
-        }
+        // if (!defined('SCOOL_ENROLLMENT_PATH')) {
+        //     define('SCOOL_ENROLLMENT_PATH', realpath(__DIR__.'/../../'));
+        // }
     }
 
     /**

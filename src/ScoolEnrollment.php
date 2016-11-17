@@ -11,11 +11,11 @@ class ScoolEnrollment
                 database_path('/factories/EnrollmentFactory.php'),
         ];
     }
-    // public static function configs()
-    // {
-    //     return [
-    //         SCOOL_ENROLLMENT_PATH . '/config/enrollment.php' =>
-    //             config_path('enrollment.php'),
-    //     ];
-    // }
+    public static function configs()
+    {
+        return [
+            SCOOL_ENROLLMENT_PATH . '/config/enrollment.php' =>
+                config_path('enrollment.php'),
+        ];
+    }
 }
