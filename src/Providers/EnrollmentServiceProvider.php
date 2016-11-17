@@ -44,8 +44,14 @@ class EnrollmentServiceProvider extends ServiceProvider
      */
     private function publishFactories()
     {
+//        $this->publishes(
+//            ScoolEnrollment::factories(),"scool_enrollment"
+//        );
         $this->publishes(
-            ScoolEnrollment::factories(),"scool_enrollment"
+            [
+            __DIR__.'/../../database/factories/EnrollmentFactory.php' =>
+            database_path() . '/factories/EnrollmentFactory.php'
+            ],"scool_enrollment"
         );
     }
 
@@ -59,5 +65,5 @@ class EnrollmentServiceProvider extends ServiceProvider
     //     $this->mergeConfigFrom(
     //         SCOOL_ENROLLMENT_PATH . '/config/enrollment.php', 'scool_enrollment'
     //     );
-    }
+//    }
 }
