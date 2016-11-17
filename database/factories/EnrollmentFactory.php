@@ -10,7 +10,7 @@
 |
 */
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Scool\Enrollment\Models\Enrollment::class, function (Faker\Generator $faker) {
+$factory->define(Scool\Enrollment\Models\Enrollment\Enrollment::class, function (Faker\Generator $faker) {
     return [
         'validated' => $faker->boolean(),
         'finished' => $faker->boolean(),
