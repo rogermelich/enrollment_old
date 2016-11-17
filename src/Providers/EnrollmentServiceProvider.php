@@ -3,7 +3,7 @@
 namespace Scool\Enrollment\Providers;
 
 use Illuminate\Support\ServiceProvider;
-// use Scool\Enrollment\ScoolEnrollment;
+use Scool\Enrollment\ScoolEnrollment;
 
 /**
  * Class EnrollmentServiceProvider
@@ -16,9 +16,9 @@ class EnrollmentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // if (!defined('SCOOL_ENROLLMENT_PATH')) {
-        //     define('SCOOL_ENROLLMENT_PATH', realpath(__DIR__.'/../../'));
-        // }
+        if (!defined('SCOOL_ENROLLMENT_PATH')) {
+            define('SCOOL_ENROLLMENT_PATH', realpath(__DIR__.'/../../'));
+        }
     }
 
     /**
@@ -28,7 +28,7 @@ class EnrollmentServiceProvider extends ServiceProvider
     {
         $this->loadMigrations();
         $this->publishFactories();
-        // $this->publishConfig();
+        $this->publishConfig();
     }
 
     /**
@@ -36,7 +36,7 @@ class EnrollmentServiceProvider extends ServiceProvider
      */
     private function loadMigrations()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
+        $this->loadMigrationsFrom(SCOOL_ENROLLMENT_PATH . '/database/migrations');
     }
 
     /**
@@ -44,26 +44,20 @@ class EnrollmentServiceProvider extends ServiceProvider
      */
     private function publishFactories()
     {
-//        $this->publishes(
-//            ScoolEnrollment::factories(),"scool_enrollment"
-//        );
-        $this->publishes(
-            [
-            __DIR__.'/../../database/factories/EnrollmentFactory.php' =>
-            database_path() . '/factories/EnrollmentFactory.php'
-            ],"scool_enrollment"
-        );
+       $this->publishes(
+           ScoolEnrollment::factories(),"scool_enrollment"
+       );
     }
 
-    // /**
-    //  *
-    //  */
-    // private function publishConfig() {
-    //     $this->publishes(
-    //         ScoolEnrollment::configs(),"scool_enrollment"
-    //     );
-    //     $this->mergeConfigFrom(
-    //         SCOOL_ENROLLMENT_PATH . '/config/enrollment.php', 'scool_enrollment'
-    //     );
-//    }
+    /**
+     *
+     */
+    private function publishConfig() {
+        $this->publishes(
+            ScoolEnrollment::configs(),"scool_enrollment"
+        );
+        $this->mergeConfigFrom(
+            SCOOL_ENROLLMENT_PATH . '/config/enrollment.php', 'scool_enrollment'
+        );
+   }
 }
