@@ -11,5 +11,8 @@
             "name": "Roger Melich",
             "email": "rogermelich@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {"Scool\\Enrollment\\": "src"}
+    }
 }
