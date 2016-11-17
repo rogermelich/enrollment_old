@@ -17,10 +17,9 @@ class CreateEnrollmentsTable extends Migration
             $table->increments('id');
             $table->boolean('validated')->default('false');
             $table->boolean('finished')->default('false');
-            $table->increments('period_id');
-            $table->increments('study_id');
-            $table->increments('course_id');
-            $table->increments('classroom_id');
+//            $table->increments('study_id');
+//            $table->increments('course_id');
+//            $table->increments('classroom_id');
             $table->timestamps();
         });
     }
