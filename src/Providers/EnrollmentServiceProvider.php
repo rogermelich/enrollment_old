@@ -28,7 +28,7 @@ class EnrollmentServiceProvider extends ServiceProvider
     {
         $this->loadMigrations();
         $this->publishFactories();
-        $this->publishConfig();
+        // $this->publishConfig();
     }
 
     /**
@@ -36,7 +36,7 @@ class EnrollmentServiceProvider extends ServiceProvider
      */
     private function loadMigrations()
     {
-        $this->loadMigrationsFrom(SCOOL_ENROLLMENT_PATH . '/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
     }
 
     /**
@@ -49,15 +49,15 @@ class EnrollmentServiceProvider extends ServiceProvider
         );
     }
 
-    /**
-     *
-     */
-    private function publishConfig() {
-        $this->publishes(
-            ScoolEnrollment::configs(),"scool_enrollment"
-        );
-        $this->mergeConfigFrom(
-            SCOOL_ENROLLMENT_PATH . '/config/enrollment.php', 'scool_enrollment'
-        );
+    // /**
+    //  *
+    //  */
+    // private function publishConfig() {
+    //     $this->publishes(
+    //         ScoolEnrollment::configs(),"scool_enrollment"
+    //     );
+    //     $this->mergeConfigFrom(
+    //         SCOOL_ENROLLMENT_PATH . '/config/enrollment.php', 'scool_enrollment'
+    //     );
     }
 }
