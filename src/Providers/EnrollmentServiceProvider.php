@@ -32,7 +32,7 @@ class EnrollmentServiceProvider extends ServiceProvider
     }
 
     /**
-     *
+     * Publish files in Folder Migrations
      */
     private function loadMigrations()
     {
@@ -40,7 +40,7 @@ class EnrollmentServiceProvider extends ServiceProvider
     }
 
     /**
-     *
+     * Publish Factories
      */
     private function publishFactories()
     {
@@ -50,7 +50,7 @@ class EnrollmentServiceProvider extends ServiceProvider
     }
 
     /**
-     *
+     *  Publish Config file
      */
     private function publishConfig() {
         $this->publishes(
