@@ -1,17 +1,13 @@
 <?php
 
-namespace Scool\Http\Controllers;
+namespace Scool\Enrollment\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
-use App\Http\Requests\EnrollmentCreateRequest;
-use App\Http\Requests\EnrollmentUpdateRequest;
-use App\Repositories\EnrollmentRepository;
-use App\Validators\EnrollmentValidator;
+use Scool\Enrollment\Http\Requests\EnrollmentCreateRequest;
+use Scool\Enrollment\Http\Requests\EnrollmentUpdateRequest;
+use Scool\Enrollment\Repositories\EnrollmentRepository;
+use Scool\Enrollment\Validators\EnrollmentValidator;
 
 
 class EnrollmentsController extends Controller
