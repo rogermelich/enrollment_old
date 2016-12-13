@@ -1,6 +1,6 @@
 <?php
 
-namespace Scool\Enrollment;
+namespace Scool\Enrollment\Repositories;
 
 class ScoolEnrollment
 {
