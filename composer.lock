@@ -4,9 +4,42 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dd9868975d79a74efbfdbb9a1ee4b1ff",
-    "content-hash": "fe7b254a4cc118eb86ea0b84774af2cf",
+    "hash": "f1e82412d280c59153fa18e4c982b0a5",
+    "content-hash": "dce7b29e2c40401838a129c887167f14",
     "packages": [
+        {
+            "name": "acacha/names",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/acacha/names.git",
+                "reference": "4012b58dea1e4f093c1e1a9d9d3dac41c5f2c80b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/acacha/names/zipball/4012b58dea1e4f093c1e1a9d9d3dac41c5f2c80b",
+                "reference": "4012b58dea1e4f093c1e1a9d9d3dac41c5f2c80b",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Acacha\\Names\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Sergi Tur Badenas",
+                    "email": "sergiturbadenas@gmail.com"
+                }
+            ],
+            "description": "Provides alternative names to Laravel models.",
+            "time": "2016-11-27 07:25:47"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
