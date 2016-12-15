@@ -4,9 +4,9 @@ namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\enrollmentRepository;
-use App\Entities\Enrollment;
-use App\Validators\EnrollmentValidator;
+use Scool\Enrollment\Repositories\EnrollmentRepository;
+use Scool\Enrollment\Entities\Enrollment;
+use Scool\Enrollment\Validators\EnrollmentValidator;
 
 /**
  * Class EnrollmentRepositoryEloquent
