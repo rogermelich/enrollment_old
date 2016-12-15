@@ -6,7 +6,7 @@
         "fzaninotto/faker": "^1.6",
         "scool/foundation": "^0.1.0",
         "prettus/l5-repository": "^2.6",
-        "acacha/names": "^0.2.1"
+        "acacha/names": "dev-master"
     },
     "license": "MIT",
     "authors": [

@@ -4,12 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f1e82412d280c59153fa18e4c982b0a5",
-    "content-hash": "dce7b29e2c40401838a129c887167f14",
+    "hash": "2a028fba461bad7d538725b0922cdd63",
+    "content-hash": "b6e75157969d0901be1ab30084388f51",
     "packages": [
         {
             "name": "acacha/names",
-            "version": "0.2.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acacha/names.git",
@@ -2105,7 +2105,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "acacha/names": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
