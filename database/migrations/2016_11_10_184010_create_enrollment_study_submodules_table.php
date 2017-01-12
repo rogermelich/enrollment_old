@@ -15,13 +15,16 @@ class CreateEnrollmentStudySubmodulesTable extends Migration
     {
         Schema::create('enrollment_study_submodules', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->integer('enrollment_id')->unsigned();
-//            $table->increments('study_submodule_id');
-        });
+            $table->integer('module_id')->unsigned()->nullable();
+            $table->integer('study_submodule_id')->unsigned()->nullable();
+            $table->string('state')->nullable();
+            $table->timestamps();
+            $table->index(['enrollment_id', 'module_id','submodule_id']);
+            $table->foreign('enrollment_id')->references('id')->on('enrollments');
+            $table->foreign('module_id')->references('id')->on('modules');
+            $table->foreign('study_submodule_id')->references('id')->on('submodules');
 
-        Schema::table('enrollments', function ($table) {
-            $table->foreign('enrollment_id')->references('id')->on('enrollments')->onDelete('cascade');
         });
     }
 

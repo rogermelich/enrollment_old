@@ -3,8 +3,12 @@
 namespace Scool\Enrollment\Providers;
 
 use Acacha\Names\Providers\NamesServiceProvider;
+use Acacha\Stateful\Providers\StatefulServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Scool\Enrollment\ScoolEnrollment;
+//use Scool\Enrollment\Stats\CacheableStatsRepository;
+//use Scool\Enrollment\Stats\Contracts\StatsRepository as StatsRepositoryInterface;
+//use Scool\Enrollement\Stats\StatsRepository;
 
 /**
  * Class EnrollmentServiceProvider
@@ -22,6 +26,15 @@ class EnrollmentServiceProvider extends ServiceProvider
         }
 
         $this->registerNamesServiceProvider();
+
+
+        $this->registerStatefulEloquentServiceProvider();
+        $this->app->bind(\Scool\Enrollment\Repositories\EnrollmentRepository::class, \Scool\Enrollment\Repositories\EnrollmentRepositoryEloquent::class);
+
+//        $this->app->bind(StatsRepositoryInterface::class,function() {
+//            return new CacheableStatsRepository(new StatsRepository());
+//        });
+
     }
 
 
@@ -82,5 +95,10 @@ class EnrollmentServiceProvider extends ServiceProvider
     protected function registerNamesServiceProvider()
     {
         $this->app->register(NamesServiceProvider::class);
+    }
+
+    protected function registerStatefulEloquentServiceProvider()
+    {
+        $this->app->register(StatefulServiceProvider::class);
     }
 }

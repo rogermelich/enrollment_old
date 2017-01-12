@@ -8,5 +8,5 @@ return [
     | The project class for users.
     |
     */
-    'user_class' => App\User::class,
+//    'user_class' => App\User::class,
 ];

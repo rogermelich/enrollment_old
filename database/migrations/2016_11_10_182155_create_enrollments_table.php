@@ -14,12 +14,19 @@ class CreateEnrollmentsTable extends Migration
     public function up()
     {
         Schema::create('enrollments', function (Blueprint $table) {
+
             $table->increments('id');
-            $table->boolean('validated')->default('false');
-            $table->boolean('finished')->default('false');
-//            $table->increments('study_id');
-//            $table->increments('course_id');
-//            $table->increments('classroom_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('study_id')->unsigned()->nullable();
+            $table->integer('course_id')->unsigned()->nullable();
+            $table->integer('classroom_id')->unsigned()->nullable();
+            $table->string('state')->nullable();
+            $table->timestamps();
+            $table->index(['user_id', 'study_id','course_id','classroom_id']);
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('study_id')->references('id')->on('studies');
+            $table->foreign('course_id')->references('id')->on('courses');
+            $table->foreign('classroom_id')->references('id')->on('classrooms');
             $table->timestamps();
         });
     }

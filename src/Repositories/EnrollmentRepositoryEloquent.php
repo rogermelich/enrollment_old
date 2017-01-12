@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repositories;
+namespace Scool\Enrollment\Repositories;
 
+use Prettus\Repository\Contracts\CacheableInterface;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Scool\Enrollment\Repositories\EnrollmentRepository;
 use Scool\Enrollment\Entities\Enrollment;
 use Scool\Enrollment\Validators\EnrollmentValidator;
 
@@ -12,7 +12,7 @@ use Scool\Enrollment\Validators\EnrollmentValidator;
  * Class EnrollmentRepositoryEloquent
  * @package namespace App\Repositories;
  */
-class EnrollmentRepositoryEloquent extends BaseRepository implements EnrollmentRepository
+class EnrollmentRepositoryEloquent extends BaseRepository implements EnrollmentRepository//,CacheableInterface
 {
     /**
      * Specify Model class name
