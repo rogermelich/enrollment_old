@@ -27,7 +27,6 @@ class CreateEnrollmentsTable extends Migration
             $table->foreign('study_id')->references('id')->on('studies');
             $table->foreign('course_id')->references('id')->on('courses');
             $table->foreign('classroom_id')->references('id')->on('classrooms');
-            $table->timestamps();
         });
     }
 
