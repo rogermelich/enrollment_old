@@ -7,9 +7,9 @@ use Scool\Enrollment\Models\Enrollment\Enrollment;
 
 class EnrollmentStudySubmodules extends Model
 {
-//    protected $table = 'enrollment_study_submodules';
+    protected $table = 'enrollment_study_submodules';
     protected $fillable = ['enrollment_id', 'module_id', 'study_submodule_id',];
-//    protected $guarded = ['id'];
+    protected $guarded = ['id'];
 
     public function enrollment()
     {
