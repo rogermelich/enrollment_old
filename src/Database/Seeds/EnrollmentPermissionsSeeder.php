@@ -1,5 +1,7 @@
 <?php
 
+namespace Scool\Enrollment\Database\Seeds;
+
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Contracts\Permission;
 use Spatie\Permission\Contracts\Role;
